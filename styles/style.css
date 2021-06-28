@@ -15,19 +15,38 @@ header h1{
     font-size: 40px;
 }
 
+h2{
+    text-align: center;
+}
+
 #form-section{
     margin: 2vh 0 2vh;
 }
-.form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 1vh;
+
+form {
+    width: 20vw;
 }
 
-.form label{
-    margin-right: 5%;
+.form{
+    margin-top: 1vh;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
 }
+
+label{
+    min-width: 100px;
+}
+
+#read-input {
+    margin-right: 10vw;
+   
+}
+
+#add-input{
+    padding: 0 10px;
+}
+
 .separator {
     height: 2px;
     width: 90%;
