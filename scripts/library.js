@@ -42,3 +42,10 @@ addInput.addEventListener("click", () => {
     // TODO: Create a function to create a div per book in the array and append it to #books-display
 
 })
+
+function addBookToDisplay(book){
+  // Takes a book object, creates a div with its details, applies a css class and appends it to the #book-display container
+  const bookDiv = document.createElement('div');
+  bookDiv.classList.add("book");
+  document.getElementById('books-display').appendChild(book);
+}
