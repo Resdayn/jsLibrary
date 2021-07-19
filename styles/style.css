@@ -56,3 +56,9 @@ label{
 #books-display{
     height: 600px;
 }
+
+.book {
+    background-color: white;
+    color: rgb(155, 115, 30);
+    border: solid double 2px black;
+}
