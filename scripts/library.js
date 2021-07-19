@@ -46,6 +46,11 @@ addInput.addEventListener("click", () => {
 function addBookToDisplay(book){
   // Takes a book object, creates a div with its details, applies a css class and appends it to the #book-display container
   const bookDiv = document.createElement('div');
+  //TODO: Add the 4 divs for each of the book properties
+  bookDiv.appendChild(document.createElement('div').innerText(book.title));
+  bookDiv.appendChild(document.createElement('div').innerText(book.value));
+  bookDiv.appendChild(document.createElement('div').innerText(book.value));
+  bookDiv.appendChild(document.createElement('div').innerText(`Read? ${book.isRead}`));
   bookDiv.classList.add("book");
   document.getElementById('books-display').appendChild(book);
 }
