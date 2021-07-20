@@ -44,6 +44,10 @@ addInput.addEventListener("click", () => {
     isRead.checked = false;
 
     // TODO: Create a function to create a div per book in the array and append it to #books-display
+    let bookDisplay = document.querySelector('#books-display');
+    while (bookDisplay.firstChild){
+      bookDisplay.removeChild(bookDisplay.firstChild)
+    }
     myLibrary.forEach(book => addBookToDisplay(book));
 
 })
