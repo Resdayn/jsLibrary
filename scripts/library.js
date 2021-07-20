@@ -65,11 +65,11 @@ function addBookToDisplay(book){
 
   let bookPages = document.createElement('div');
   bookPages.id = "book-pages";
-  bookPages.innerText = book.pages
+  bookPages.innerText = `${book.pages} pages`
   bookDiv.append(bookAuthor);  
 
   let bookIsread = document.createElement('div');
   bookIsread.id = "book-bookIsread";
-  bookIsread.innerText = book.pages
+  bookIsread.innerText = `Read? ${book.isRead}`
   bookDiv.append(bookIsread);
 }
