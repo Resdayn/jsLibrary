@@ -40,17 +40,36 @@ addInput.addEventListener("click", () => {
     isRead.checked = false;
 
     // TODO: Create a function to create a div per book in the array and append it to #books-display
+    myLibrary.forEach(book => addBookToDisplay(book));
 
 })
 
 function addBookToDisplay(book){
   // Takes a book object, creates a div with its details, applies a css class and appends it to the #book-display container
   const bookDiv = document.createElement('div');
-  //TODO: Add the 4 divs for each of the book properties
-  bookDiv.appendChild(document.createElement('div').innerText(book.title));
-  bookDiv.appendChild(document.createElement('div').innerText(book.value));
-  bookDiv.appendChild(document.createElement('div').innerText(book.value));
-  bookDiv.appendChild(document.createElement('div').innerText(`Read? ${book.isRead}`));
+
+  // Adds the book div to the DOM and applies the CSS style
+  document.getElementById('books-display').appendChild(bookDiv);
   bookDiv.classList.add("book");
-  document.getElementById('books-display').appendChild(book);
+
+  //Adds the 4 divs for each of the book properties
+  let bookTitle = document.createElement('div');
+  bookTitle.id = "book-title";
+  bookTitle.innerText = book.title
+  bookDiv.append(bookTitle);
+  
+  let bookAuthor = document.createElement('div');
+  bookAuthor.id = "book-author";
+  bookAuthor.innerText = book.author
+  bookDiv.append(bookAuthor);
+
+  let bookPages = document.createElement('div');
+  bookPages.id = "book-pages";
+  bookPages.innerText = book.pages
+  bookDiv.append(bookAuthor);  
+
+  let bookIsread = document.createElement('div');
+  bookIsread.id = "book-bookIsread";
+  bookIsread.innerText = book.pages
+  bookDiv.append(bookIsread);
 }
