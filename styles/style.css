@@ -55,10 +55,24 @@ label{
 
 #books-display{
     height: 600px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: flex-start;
 }
 
 .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
     color: rgb(155, 115, 30);
-    border: solid double 2px black;
+    border: solid 2px black;
+    width: 100px;
+    height: 150px;
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
