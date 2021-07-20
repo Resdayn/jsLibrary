@@ -30,6 +30,10 @@ addInput.addEventListener("click", () => {
     let pages = document.querySelector('[name="pages"]');
     let isRead = document.querySelector('[name="read"]');
 
+    if (title.value == '' || author.value == '' || pages.value == ''){
+      return alert('You need to fill all the sections in order to add a book!');
+    }
+
     let newBook = new Book(title.value, author.value, pages.value, isRead.checked);
     addBookToLibrary(newBook);
 
