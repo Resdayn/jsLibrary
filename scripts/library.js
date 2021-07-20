@@ -64,20 +64,24 @@ function addBookToDisplay(book){
   let bookTitle = document.createElement('div');
   bookTitle.id = "book-title";
   bookTitle.innerText = book.title
+  bookTitle.style.fontSize = '3em';
   bookDiv.append(bookTitle);
   
   let bookAuthor = document.createElement('div');
   bookAuthor.id = "book-author";
-  bookAuthor.innerText = book.author
+  bookAuthor.innerText = book.author;
+  bookAuthor.style.fontSize = '2em';
   bookDiv.append(bookAuthor);
 
   let bookPages = document.createElement('div');
   bookPages.id = "book-pages";
-  bookPages.innerText = `${book.pages} pages`
+  bookPages.innerText = `${book.pages} pages`;
+  bookPages.style.fontSize = '2em';
   bookDiv.append(bookAuthor);  
 
   let bookIsread = document.createElement('div');
   bookIsread.id = "book-bookIsread";
   bookIsread.innerText = `Read? ${book.isRead}`
+  bookIsread.style.fontSize = '2em';
   bookDiv.append(bookIsread);
 }
