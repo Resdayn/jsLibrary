@@ -94,4 +94,7 @@ function addBookToDisplay(book, index){
   removeBookButton.innerText = 'Remove';
   removeBookButton.classList.add('remove-button');
   bookDiv.append(removeBookButton);
+  removeBookButton.addEventListener('click', (e) => {
+    console.log(`The index of this book is ${e.target.parentElement.dataset.bookIndex}`);
+  })
 }
