@@ -48,17 +48,20 @@ addInput.addEventListener("click", () => {
     while (bookDisplay.firstChild){
       bookDisplay.removeChild(bookDisplay.firstChild)
     }
-    myLibrary.forEach(book => addBookToDisplay(book));
+    myLibrary.forEach(book, index => addBookToDisplay(book, index));
 
 })
 
-function addBookToDisplay(book){
+function addBookToDisplay(book, index){
   // Takes a book object, creates a div with its details, applies a css class and appends it to the #book-display container
   const bookDiv = document.createElement('div');
 
   // Adds the book div to the DOM and applies the CSS style
   document.getElementById('books-display').appendChild(bookDiv);
   bookDiv.classList.add("book");
+
+  // Adds the data-attribute with the index value in the library array
+  bookDiv.dataset.bookIndex = index;
 
   //Adds the 4 divs for each of the book properties
   let bookTitle = document.createElement('div');
