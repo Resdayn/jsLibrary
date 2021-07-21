@@ -96,5 +96,11 @@ function addBookToDisplay(book, index){
   bookDiv.append(removeBookButton);
   removeBookButton.addEventListener('click', (e) => {
     console.log(`The index of this book is ${e.target.parentElement.dataset.bookIndex}`);
+    delete myLibrary[e.target.parentElement.dataset.bookIndex];
+    let bookDisplay = document.querySelector('#books-display');
+    while (bookDisplay.firstChild){
+      bookDisplay.removeChild(bookDisplay.firstChild)
+    }
+    myLibrary.forEach((book, index) => addBookToDisplay(book, index));
   })
 }
