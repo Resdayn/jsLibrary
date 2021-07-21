@@ -48,7 +48,7 @@ addInput.addEventListener("click", () => {
     while (bookDisplay.firstChild){
       bookDisplay.removeChild(bookDisplay.firstChild)
     }
-    myLibrary.forEach(book, index => addBookToDisplay(book, index));
+    myLibrary.forEach((book, index) => addBookToDisplay(book, index));
 
 })
 
@@ -63,7 +63,7 @@ function addBookToDisplay(book, index){
   // Adds the data-attribute with the index value in the library array
   bookDiv.dataset.bookIndex = index;
 
-  //Adds the 4 divs for each of the book properties
+  // Adds the 4 divs for each of the book properties
   let bookTitle = document.createElement('div');
   bookTitle.id = "book-title";
   bookTitle.innerText = book.title
@@ -87,4 +87,11 @@ function addBookToDisplay(book, index){
   bookIsread.innerText = `Read? ${book.isRead}`
   bookIsread.style.fontSize = '2em';
   bookDiv.append(bookIsread);
+
+  // Adds the button to remove the book
+  let removeBookButton = document.createElement('button');
+  removeBookButton.id = 'remove-button';
+  removeBookButton.innerText = 'Remove';
+  removeBookButton.classList.add('remove-button');
+  bookDiv.append(removeBookButton);
 }
