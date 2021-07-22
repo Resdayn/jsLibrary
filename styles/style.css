@@ -73,7 +73,7 @@ label{
     color: rgb(155, 115, 30);
     border: solid 2px black;
     width: 250px;
-    height: 300px;
+    height: 350px;
     margin-top: 20px;
     margin-right: 14px;
     margin-left: 15px;
@@ -95,5 +95,23 @@ label{
 }
 .remove-button:hover{
     background: #f73b3b;
+    text-decoration: none;
+}
+
+.read-change-button{
+    -webkit-border-radius: 25;
+    -moz-border-radius: 25;
+    border-radius: 25px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 12px;
+    background: #0eeb83;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    border: none;
+}
+.read-change-button:hover{
+    background: #3fd690;
     text-decoration: none;
 }
