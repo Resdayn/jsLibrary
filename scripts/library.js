@@ -84,7 +84,10 @@ function addBookToDisplay(book, index){
 
   let bookIsread = document.createElement('div');
   bookIsread.id = "book-bookIsread";
-  bookIsread.innerText = `Read? ${book.isRead}`
+  if (book.isRead == false){
+    bookIsread.innerText = 'Not Read';
+  } else {bookIsread.innerText = 'Read';}
+  
   bookIsread.style.fontSize = '2em';
   bookDiv.append(bookIsread);
 
