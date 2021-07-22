@@ -86,10 +86,35 @@ function addBookToDisplay(book, index){
   bookIsread.id = "book-bookIsread";
   if (book.isRead == false){
     bookIsread.innerText = 'Not Read';
-  } else {bookIsread.innerText = 'Read';}
+  } else {bookIsread.innerText = 'Finished';}
   
   bookIsread.style.fontSize = '2em';
   bookDiv.append(bookIsread);
+
+  // Adds the button to change the read value
+  let changeReadStatus = document.createElement('button');
+  changeReadStatus.id = 'change-read';
+  changeReadStatus.classList.add('read-change-button')
+  bookDiv.append(changeReadStatus)
+
+  if (book.isRead == false){
+    document.querySelector('#change-read').innerText = 'Finished';
+  } else if (book.isRead == true){
+    document.querySelector('#change-read').innerText = 'Not Read';
+  }
+  
+  changeReadStatus.addEventListener('click', (e) => {
+    // Changes the read status in the html and changes the read value of the book object in the array
+    if (book.isRead == false){
+      e.target.parentElement.children[2].innerText = 'Finished';
+      myLibrary[index].isRead = true;
+      document.querySelector('#change-read').innerText = 'Not Read';
+    } else {
+      e.target.parentElement.children[2].innerText = 'Not Read';
+      myLibrary[index].isRead = false;
+      document.querySelector('#change-read').innerText = 'Finished';
+    }
+  });
 
   // Adds the button to remove the book
   let removeBookButton = document.createElement('button');
@@ -105,5 +130,6 @@ function addBookToDisplay(book, index){
       bookDisplay.removeChild(bookDisplay.firstChild)
     }
     myLibrary.forEach((book, index) => addBookToDisplay(book, index));
-  })
+  });
+
 }
