@@ -43,7 +43,7 @@ addInput.addEventListener("click", () => {
     pages.value = "";
     isRead.checked = false;
 
-    // TODO: Create a function to create a div per book in the array and append it to #books-display
+    // Removes all the html book cards and runs addBookToDisplay
     let bookDisplay = document.querySelector('#books-display');
     while (bookDisplay.firstChild){
       bookDisplay.removeChild(bookDisplay.firstChild)
@@ -83,7 +83,7 @@ function addBookToDisplay(book, index){
   bookDiv.append(bookAuthor);  
 
   let bookIsread = document.createElement('div');
-  bookIsread.id = "book-bookIsread";
+  bookIsread.id = "book-Isread";
   if (book.isRead == false){
     bookIsread.innerText = 'Not Read';
   } else {bookIsread.innerText = 'Finished';}
@@ -97,10 +97,10 @@ function addBookToDisplay(book, index){
   changeReadStatus.classList.add('read-change-button')
   bookDiv.append(changeReadStatus)
 
-  if (book.isRead == false){
-    document.querySelector('#change-read').innerText = 'Finished';
-  } else if (book.isRead == true){
-    document.querySelector('#change-read').innerText = 'Not Read';
+  if (bookIsread.innerText = 'Not Read'){
+    changeReadStatus.innerText = 'Finished';
+  } else if (bookIsread.innerText = 'Finished'){
+    changeReadStatus.innerText = 'Not Read';
   }
   
   changeReadStatus.addEventListener('click', (e) => {
@@ -108,11 +108,11 @@ function addBookToDisplay(book, index){
     if (book.isRead == false){
       e.target.parentElement.children[2].innerText = 'Finished';
       myLibrary[index].isRead = true;
-      document.querySelector('#change-read').innerText = 'Not Read';
+      changeReadStatus.innerText = 'Not Read';
     } else {
       e.target.parentElement.children[2].innerText = 'Not Read';
       myLibrary[index].isRead = false;
-      document.querySelector('#change-read').innerText = 'Finished';
+      changeReadStatus.innerText = 'Finished';
     }
   });
 
